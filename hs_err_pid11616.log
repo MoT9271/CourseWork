@@ -1,0 +1,223 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 123731968 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3528), pid=11616, tid=11164
+#
+# JRE version:  (20.0.1+9) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.0.1+9-29, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:E:\IntelliJ IDEA 2022.2\lib\idea_rt.jar=53859:E:\IntelliJ IDEA 2022.2\bin -Dfile.encoding=UTF-8 --module-path=C:\Users\matve\.m2\repository\org\openjfx\javafx-controls\17.0.2\javafx-controls-17.0.2-win.jar;C:\Users\matve\.m2\repository\com\github\almasb\fxgl-core\17.1\fxgl-core-17.1.jar;C:\Users\matve\.m2\repository\com\gluonhq\attach\audio\4.0.13\audio-4.0.13.jar;C:\Users\matve\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.1\jackson-annotations-2.12.1.jar;C:\Users\matve\.m2\repository\com\gluonhq\attach\lifecycle\4.0.13\lifecycle-4.0.13.jar;C:\Users\matve\.m2\repository\com\github\almasb\fxgl-entity\17.1\fxgl-entity-17.1.jar;C:\Users\matve\.m2\repository\com\gluonhq\attach\storage\4.0.13\storage-4.0.13.jar;C:\Users\matve\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.1\jackson-core-2.12.1.jar;C:\Users\matve\.m2\repository\com\github\almasb\fxgl-gameplay\17.1\fxgl-gameplay-17.1.jar;C:\Users\matve\.m2\repository\com\github\almasb\fxgl\17.1\fxgl-17.1.jar;C:\Users\matve\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.5.32\kotlin-stdlib-1.5.32-modular.jar;C:\Users\matve\.m2\repository\org\openjfx\javafx-graphics\17.0.2\javafx-graphics-17.0.2-win.jar;C:\Users\matve\.m2\repository\org\openjfx\javafx-fxml\17.0.2\javafx-fxml-17.0.2-win.jar;D:\5 term\CourseWork\FXCourseWork\target\classes;C:\Users\matve\.m2\repository\com\github\almasb\fxgl-io\17.1\fxgl-io-17.1.jar;C:\Users\matve\.m2\repository\org\openjfx\javafx-base\17.0.2\javafx-base-17.0.2-win.jar;C:\Users\matve\.m2\repository\org\openjfx\javafx-media\17.0.2\javafx-media-17.0.2-win.jar;C:\Users\matve\.m2\repository\com\gluonhq\attach\util\4.0.13\util-4.0.13.jar;C:\Users\matve\.m2\repository\com\github\almasb\fxgl-scene\17.1\fxgl-scene-17.1.jar;C:\Users\matve\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.1\jackson-databind-2.12.1.jar -Djdk.module.main=com.matnik.game.fxcoursework com.matnik.game.fxcoursework/com.matnik.game.fxcoursework.client.controller.App
+
+Host: AMD Ryzen 7 4700U with Radeon Graphics         , 8 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+Time: Wed Nov 15 21:39:00 2023 RTZ 2 (s 10 , 64 bit Build 19041 (10.0.19041.3636) elapsed time: 0.016591 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000230e9e28070):  JavaThread "Unknown thread" [_thread_in_vm, id=11164, stack(0x000000f270400000,0x000000f270500000)]
+
+Stack: [0x000000f270400000,0x000000f270500000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6bb95a]
+V  [jvm.dll+0x8485fa]
+V  [jvm.dll+0x84a1f5]
+V  [jvm.dll+0x84a8f3]
+V  [jvm.dll+0x280b0f]
+V  [jvm.dll+0x6b86e9]
+V  [jvm.dll+0x6ad2da]
+V  [jvm.dll+0x35adf5]
+V  [jvm.dll+0x363016]
+V  [jvm.dll+0x3b3b3e]
+V  [jvm.dll+0x3b3dc5]
+V  [jvm.dll+0x32b50a]
+V  [jvm.dll+0x32c32b]
+V  [jvm.dll+0x8112bf]
+V  [jvm.dll+0x3c0d91]
+V  [jvm.dll+0x7fcfe3]
+V  [jvm.dll+0x44c76f]
+V  [jvm.dll+0x44e0e1]
+C  [jli.dll+0x5287]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17344]
+C  [ntdll.dll+0x526b1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffae238a098, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000230e9daea20 WorkerThread "GC Thread#0" [stack: 0x000000f270500000,0x000000f270600000] [id=15064]
+  0x00000230e9e8f450 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000f270600000,0x000000f270700000] [id=16080]
+  0x00000230e9e8fd90 WorkerThread "G1 Conc#0" [stack: 0x000000f270700000,0x000000f270800000] [id=15540]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffae1b6eb47]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000230e9e23a70] Heap_lock - owner thread: 0x00000230e9e28070
+
+Heap address: 0x000000008a200000, size: 1886 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x000000008a200000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffae1f43c59]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.010 Loaded shared library C:\Program Files\Java\jdk-20\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7c1b60000 - 0x00007ff7c1b70000 	C:\Program Files\Java\jdk-20\bin\java.exe
+0x00007ffb204f0000 - 0x00007ffb206e8000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffb1e770000 - 0x00007ffb1e82d000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffb1dd90000 - 0x00007ffb1e086000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffb1e270000 - 0x00007ffb1e370000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffb08ff0000 - 0x00007ffb09009000 	C:\Program Files\Java\jdk-20\bin\jli.dll
+0x00007ffb16920000 - 0x00007ffb1693b000 	C:\Program Files\Java\jdk-20\bin\VCRUNTIME140.dll
+0x00007ffb1ef70000 - 0x00007ffb1f01f000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffb1f2f0000 - 0x00007ffb1f38e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffb1fcc0000 - 0x00007ffb1fd5c000 	C:\Windows\System32\sechost.dll
+0x00007ffb1f410000 - 0x00007ffb1f536000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffb1e550000 - 0x00007ffb1e6ee000 	C:\Windows\System32\USER32.dll
+0x00007ffb1e120000 - 0x00007ffb1e142000 	C:\Windows\System32\win32u.dll
+0x00007ffb05fc0000 - 0x00007ffb0625a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.3636_none_60b6a03d71f818d5\COMCTL32.dll
+0x00007ffb1f020000 - 0x00007ffb1f04c000 	C:\Windows\System32\GDI32.dll
+0x00007ffb1e150000 - 0x00007ffb1e26a000 	C:\Windows\System32\gdi32full.dll
+0x00007ffb1dc80000 - 0x00007ffb1dd1d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffb14100000 - 0x00007ffb1410a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffb1edb0000 - 0x00007ffb1ede0000 	C:\Windows\System32\IMM32.DLL
+0x00007ffb19730000 - 0x00007ffb1973c000 	C:\Program Files\Java\jdk-20\bin\vcruntime140_1.dll
+0x00007ffb02960000 - 0x00007ffb029ee000 	C:\Program Files\Java\jdk-20\bin\msvcp140.dll
+0x00007ffae1830000 - 0x00007ffae24c7000 	C:\Program Files\Java\jdk-20\bin\server\jvm.dll
+0x00007ffb03780000 - 0x00007ffb03789000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffb12970000 - 0x00007ffb12997000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffb1f260000 - 0x00007ffb1f2cb000 	C:\Windows\System32\WS2_32.dll
+0x00007ffb1ba70000 - 0x00007ffb1ba82000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffb19440000 - 0x00007ffb1944a000 	C:\Program Files\Java\jdk-20\bin\jimage.dll
+0x00007ffb0a0b0000 - 0x00007ffb0a294000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffb06630000 - 0x00007ffb06664000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffb1e090000 - 0x00007ffb1e112000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffb17020000 - 0x00007ffb1702e000 	C:\Program Files\Java\jdk-20\bin\instrument.dll
+0x00007ffb06fc0000 - 0x00007ffb06fe6000 	C:\Program Files\Java\jdk-20\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-20\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.3636_none_60b6a03d71f818d5;C:\Program Files\Java\jdk-20\bin\server
+
+VM Arguments:
+jvm_args: -javaagent:E:\IntelliJ IDEA 2022.2\lib\idea_rt.jar=53859:E:\IntelliJ IDEA 2022.2\bin -Dfile.encoding=UTF-8 --module-path=C:\Users\matve\.m2\repository\org\openjfx\javafx-controls\17.0.2\javafx-controls-17.0.2-win.jar;C:\Users\matve\.m2\repository\com\github\almasb\fxgl-core\17.1\fxgl-core-17.1.jar;C:\Users\matve\.m2\repository\com\gluonhq\attach\audio\4.0.13\audio-4.0.13.jar;C:\Users\matve\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.1\jackson-annotations-2.12.1.jar;C:\Users\matve\.m2\repository\com\gluonhq\attach\lifecycle\4.0.13\lifecycle-4.0.13.jar;C:\Users\matve\.m2\repository\com\github\almasb\fxgl-entity\17.1\fxgl-entity-17.1.jar;C:\Users\matve\.m2\repository\com\gluonhq\attach\storage\4.0.13\storage-4.0.13.jar;C:\Users\matve\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.1\jackson-core-2.12.1.jar;C:\Users\matve\.m2\repository\com\github\almasb\fxgl-gameplay\17.1\fxgl-gameplay-17.1.jar;C:\Users\matve\.m2\repository\com\github\almasb\fxgl\17.1\fxgl-17.1.jar;C:\Users\matve\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.5.32\kotlin-stdlib-1.5.32-modular.jar;C:\Users\matve\.m2\repository\org\openjfx\javafx-graphics\17.0.2\javafx-graphics-17.0.2-win.jar;C:\Users\matve\.m2\repository\org\openjfx\javafx-fxml\17.0.2\javafx-fxml-17.0.2-win.jar;D:\5 term\CourseWork\FXCourseWork\target\classes;C:\Users\matve\.m2\repository\com\github\almasb\fxgl-io\17.1\fxgl-io-17.1.jar;C:\Users\matve\.m2\repository\org\openjfx\javafx-base\17.0.2\javafx-base-17.0.2-win.jar;C:\Users\matve\.m2\repository\org\openjfx\javafx-media\17.0.2\javafx-media-17.0.2-win.jar;C:\Users\matve\.m2\repository\com\gluonhq\attach\util\4.0.13\util-4.0.13.jar;C:\Users\matve\.m2\repository\com\github\almasb\fxgl-scene\17.1\fxgl-scene-17.1.jar;C:\Users\matve\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.1\jackson-databind-2.12.1.jar -Djdk.module.main=com.matnik.game.fxcoursework 
+java_command: com.matnik.game.fxcoursework/com.matnik.game.fxcoursework.client.controller.App
+java_class_path (initial): C:\Users\matve\.m2\repository\org\openjfx\javafx-controls\17.0.2\javafx-controls-17.0.2.jar;C:\Users\matve\.m2\repository\org\openjfx\javafx-graphics\17.0.2\javafx-graphics-17.0.2.jar;C:\Users\matve\.m2\repository\org\openjfx\javafx-base\17.0.2\javafx-base-17.0.2.jar;C:\Users\matve\.m2\repository\org\openjfx\javafx-fxml\17.0.2\javafx-fxml-17.0.2.jar;C:\Users\matve\.m2\repository\org\openjfx\javafx-media\17.0.2\javafx-media-17.0.2.jar;C:\Users\matve\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\matve\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.5.32\kotlin-stdlib-common-1.5.32.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 123731968                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1977614336                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 1977614336                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Users\matve\.jdks\openjdk-20.0.1
+PATH=E:\WMWare\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\ImageMagick-7.1.0-Q16;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;D:\bin;D:\Matlab2016\runtime\win64;D:\Matlab2016\bin;D:\Matlab2016\polyspace\bin;D:\Matlab2016\v93\runtime\win64;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;E:\nodejs\;C:\Users\matve\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\matve\AppData\Local\Programs\Python\Python310\;C:\Users\matve\AppData\Local\Microsoft\WindowsApps;C:\Users\matve\.dotnet\tools;E:\IntelliJ IDEA 2022.1.2\bin;;C:\Users\matve\AppData\Local\GitHubDesktop\bin;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Azure Data Studio\bin;E:\AppData\npm;E:\Microsoft VS Code\bin
+USERNAME=matve
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
+TMP=C:\Users\matve\AppData\Local\Temp
+TEMP=C:\Users\matve\AppData\Local\Temp
+
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+OS uptime: 0 days 6:49 hours
+
+CPU: total 8 (initial active 8) (8 cores per cpu, 1 threads per core) family 23 model 96 stepping 1 microcode 0x0, cx8, cmov, fxsr, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, rdtscp, rdpid, f16c
+
+Memory: 4k page, system-wide physical 7541M (447M free)
+TotalPageFile size 17766M (AvailPageFile size 80M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 60M, peak: 178M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.0.1+9-29) for windows-amd64 JRE (20.0.1+9-29), built on 2023-03-07T13:56:11Z by "mach5one" with MS VC++ 17.1 (VS2022)
+
+END.
