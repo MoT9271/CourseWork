@@ -34,6 +34,8 @@ public class StartMenu extends FXGLMenu {
     public static Socket socket;
     public static ObjectOutputStream out;
     public static ObjectInputStream in;
+    public static String username;
+    public static String password;
 
     public StartMenu() {
         super(MenuType.MAIN_MENU);
@@ -112,13 +114,13 @@ public class StartMenu extends FXGLMenu {
         passwordField.setFont(Font.font("Verdana", 18.0));
 
         var createButton = createButton("Create", () -> {
-            String username = usernameField.getText();
-            String password = passwordField.getText();
+            username = usernameField.getText();
+            password = passwordField.getText();
 
             // Validate username and password
             if (!username.isEmpty() && !password.isEmpty()) {
                 // Send registration information to the server
-                sendMessage("registration", new UserInfo(username, password));
+                sendMessage("registration", new UserInfo(username, password, null));
 
 
                 try {
@@ -220,13 +222,13 @@ public class StartMenu extends FXGLMenu {
         passwordField.setFont(Font.font("Verdana", 18.0));
 
         var loginButton = createButton("Login", () -> {
-            String username = usernameField.getText();
-            String password = passwordField.getText();
+            username = usernameField.getText();
+            password = passwordField.getText();
 
             // Validate username and password
             if (!username.isEmpty() && !password.isEmpty()) {
                 // Send login information to the server
-                sendMessage("login", new UserInfo(username, password));
+                sendMessage("login", new UserInfo(username, password, null));
 
                 try {
                     // Instead of reading a String, read a Response object

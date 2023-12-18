@@ -1,9 +1,9 @@
 package com.matnik.game.fxcoursework.client.view;
 
 import com.almasb.fxgl.dsl.FXGL;
+import com.matnik.game.fxcoursework.client.controller.App;
 import com.matnik.game.fxcoursework.client.module.HeroType;
 import com.matnik.game.fxcoursework.server.model.Response;
-import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
@@ -18,11 +18,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
 
 import java.io.IOException;
 
-import static com.almasb.fxgl.dsl.FXGL.*;
+import static com.almasb.fxgl.dsl.FXGL.showMessage;
+import static com.almasb.fxgl.dsl.FXGL.texture;
 
 public class MainMenuView extends Parent {
     static HeroType enemyType;
@@ -120,7 +120,8 @@ public class MainMenuView extends Parent {
     }
 
     private void showBuildView() {
-        // Implement the logic to show the build view (if needed)
+        getChildren().clear();
+        getChildren().addAll(new BuildView(BuildView.items, StartMenu.heroType));
     }
 
     private void exitGame() {

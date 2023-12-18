@@ -1,20 +1,800 @@
 {
-  "esfd" : "adsf",
-  "sadf" : "dsf",
-  "уакпв" : "ваы",
-  "выа" : "фвуаыв",
-  "dfs" : "adfs",
-  "adesf" : "dsf",
-  "erwrgd" : "awefsdr",
-  "sdf" : "ef",
-  "dsf" : "wdefsd",
-  "dfsg" : "ewfd",
-  "wdefwd" : "dfs",
-  "afsd" : "adefs",
-  "adsf" : "aedfs",
-  "ewrsgt" : "efasd",
-  "adfs" : "fsd",
-  "awdefsd" : "defsd",
-  "ваы" : "выа",
-  "dsfg" : "dsaf"
+  "esfd" : {
+    "username" : "esfd",
+    "password" : "dsf",
+    "hero" : {
+      "heroType" : "Archer",
+      "hp" : 18,
+      "damage" : 9,
+      "armor" : 3,
+      "magicResistance" : 1,
+      "items" : [ {
+        "type" : "bow",
+        "imagePath" : "armorBow.png",
+        "hp" : 4,
+        "damage" : 2,
+        "armor" : 2,
+        "magicResistance" : 0
+      }, {
+        "type" : "amulet",
+        "imagePath" : "armorAmulet.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 1,
+        "magicResistance" : 0
+      }, {
+        "type" : "glove",
+        "imagePath" : "magicGlove.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 0,
+        "magicResistance" : 1
+      } ]
+    }
+  },
+  "wadefsrd" : {
+    "username" : "wadefsrd",
+    "password" : "adsdfg",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 18,
+      "damage" : 4,
+      "armor" : 10,
+      "magicResistance" : 4,
+      "items" : [ {
+        "type" : "cuirass",
+        "imagePath" : "armorCuirass.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "sword",
+        "imagePath" : "armorSword.png",
+        "hp" : 0,
+        "damage" : 2,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "shield",
+        "imagePath" : "buckler.png",
+        "hp" : 1,
+        "damage" : 1,
+        "armor" : 1,
+        "magicResistance" : 1
+      } ]
+    }
+  },
+  "qwerdg" : {
+    "username" : "qwerdg",
+    "password" : "frgd",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 18,
+      "damage" : 4,
+      "armor" : 7,
+      "magicResistance" : 7,
+      "items" : [ {
+        "type" : "sword",
+        "imagePath" : "armorSword.png",
+        "hp" : 0,
+        "damage" : 2,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "shield",
+        "imagePath" : "buckler.png",
+        "hp" : 1,
+        "damage" : 1,
+        "armor" : 1,
+        "magicResistance" : 1
+      }, {
+        "type" : "cuirass",
+        "imagePath" : "magickCuirass.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 0,
+        "magicResistance" : 3
+      } ]
+    }
+  },
+  "цуцак" : {
+    "username" : "цуцак",
+    "password" : "фвыа",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 18,
+      "damage" : 4,
+      "armor" : 7,
+      "magicResistance" : 7,
+      "items" : [ {
+        "type" : "sword",
+        "imagePath" : "armorSword.png",
+        "hp" : 0,
+        "damage" : 2,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "cuirass",
+        "imagePath" : "magickCuirass.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 0,
+        "magicResistance" : 3
+      }, {
+        "type" : "shield",
+        "imagePath" : "buckler.png",
+        "hp" : 1,
+        "damage" : 1,
+        "armor" : 1,
+        "magicResistance" : 1
+      } ]
+    }
+  },
+  "ewfrgd" : {
+    "username" : "ewfrgd",
+    "password" : "dsf",
+    "hero" : {
+      "heroType" : "Archer",
+      "hp" : 18,
+      "damage" : 9,
+      "armor" : 5,
+      "magicResistance" : 3,
+      "items" : [ {
+        "type" : "bow",
+        "imagePath" : "armorBow.png",
+        "hp" : 4,
+        "damage" : 2,
+        "armor" : 2,
+        "magicResistance" : 0
+      }, {
+        "type" : "amulet",
+        "imagePath" : "armorAmulet.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "glove",
+        "imagePath" : "magicGlove.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 0,
+        "magicResistance" : 3
+      } ]
+    }
+  },
+  "sdfgb" : {
+    "username" : "sdfgb",
+    "password" : "dscfg",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 15,
+      "damage" : 2,
+      "armor" : 3,
+      "magicResistance" : 3,
+      "items" : [ ]
+    }
+  },
+  "уыа" : {
+    "username" : "уыа",
+    "password" : "ыва",
+    "hero" : {
+      "heroType" : "Archer",
+      "hp" : 18,
+      "damage" : 8,
+      "armor" : 5,
+      "magicResistance" : 3,
+      "items" : [ {
+        "type" : "bow",
+        "imagePath" : "armorBow.png",
+        "hp" : 4,
+        "damage" : 2,
+        "armor" : 2,
+        "magicResistance" : 0
+      }, {
+        "type" : "amulet",
+        "imagePath" : "armorAmulet.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "glove",
+        "imagePath" : "magicGlove.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 0,
+        "magicResistance" : 3
+      } ]
+    }
+  },
+  "asdf" : {
+    "username" : "asdf",
+    "password" : "asdf",
+    "hero" : null
+  },
+  "dsaf" : {
+    "username" : "dsaf",
+    "password" : "sadf",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 18,
+      "damage" : 4,
+      "armor" : 7,
+      "magicResistance" : 7,
+      "items" : [ {
+        "type" : "sword",
+        "imagePath" : "armorSword.png",
+        "hp" : 0,
+        "damage" : 2,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "shield",
+        "imagePath" : "buckler.png",
+        "hp" : 1,
+        "damage" : 1,
+        "armor" : 1,
+        "magicResistance" : 1
+      }, {
+        "type" : "cuirass",
+        "imagePath" : "magickCuirass.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 0,
+        "magicResistance" : 3
+      } ]
+    }
+  },
+  "adsf" : {
+    "username" : "adsf",
+    "password" : "adsf",
+    "hero" : {
+      "heroType" : "Mage",
+      "hp" : 18,
+      "damage" : 18,
+      "armor" : 3,
+      "magicResistance" : 4,
+      "items" : [ {
+        "type" : "staff",
+        "imagePath" : "armorStaff.png",
+        "hp" : 0,
+        "damage" : 5,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "hat",
+        "imagePath" : "damageHat.png",
+        "hp" : 4,
+        "damage" : 5,
+        "armor" : 0,
+        "magicResistance" : 0
+      }, {
+        "type" : "ring",
+        "imagePath" : "damageRing.png",
+        "hp" : 2,
+        "damage" : 4,
+        "armor" : 0,
+        "magicResistance" : 1
+      } ]
+    }
+  },
+  "wewfd" : {
+    "username" : "wewfd",
+    "password" : "efsd",
+    "hero" : {
+      "heroType" : "Archer",
+      "hp" : 18,
+      "damage" : 8,
+      "armor" : 2,
+      "magicResistance" : 6,
+      "items" : [ {
+        "type" : "bow",
+        "imagePath" : "armorBow.png",
+        "hp" : 4,
+        "damage" : 2,
+        "armor" : 2,
+        "magicResistance" : 0
+      }, {
+        "type" : "amulet",
+        "imagePath" : "magicAmulet.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 0,
+        "magicResistance" : 3
+      }, {
+        "type" : "glove",
+        "imagePath" : "magicGlove.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 0,
+        "magicResistance" : 3
+      } ]
+    }
+  },
+  "efsd" : {
+    "username" : "efsd",
+    "password" : "adefs",
+    "hero" : {
+      "heroType" : "Mage",
+      "hp" : 14,
+      "damage" : 12,
+      "armor" : 4,
+      "magicResistance" : 5,
+      "items" : [ {
+        "type" : "staff",
+        "imagePath" : "armorStaff.png",
+        "hp" : 0,
+        "damage" : 5,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "ring",
+        "imagePath" : "armorRing.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 1,
+        "magicResistance" : 1
+      }, {
+        "type" : "hat",
+        "imagePath" : "magicHat.png",
+        "hp" : 0,
+        "damage" : 1,
+        "armor" : 0,
+        "magicResistance" : 1
+      } ]
+    }
+  },
+  "ыав" : {
+    "username" : "ыав",
+    "password" : "уыва",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 17,
+      "damage" : 8,
+      "armor" : 10,
+      "magicResistance" : 4,
+      "items" : [ {
+        "type" : "sword",
+        "imagePath" : "armorSword.png",
+        "hp" : 0,
+        "damage" : 3,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "cuirass",
+        "imagePath" : "leatherСuirass.png",
+        "hp" : 0,
+        "damage" : 3,
+        "armor" : 1,
+        "magicResistance" : 1
+      }, {
+        "type" : "shield",
+        "imagePath" : "heavyShield.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 3,
+        "magicResistance" : 0
+      } ]
+    }
+  },
+  "edsf" : {
+    "username" : "edsf",
+    "password" : "esdf",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 19,
+      "damage" : 4,
+      "armor" : 9,
+      "magicResistance" : 6,
+      "items" : [ {
+        "type" : "sword",
+        "imagePath" : "armorSword.png",
+        "hp" : 0,
+        "damage" : 3,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "shield",
+        "imagePath" : "heavyShield.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "cuirass",
+        "imagePath" : "magickCuirass.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 0,
+        "magicResistance" : 3
+      } ]
+    }
+  },
+  "defsrdgtfhg" : {
+    "username" : "defsrdgtfhg",
+    "password" : "dsfg",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 19,
+      "damage" : 2,
+      "armor" : 12,
+      "magicResistance" : 3,
+      "items" : [ {
+        "type" : "cuirass",
+        "imagePath" : "armorCuirass.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "sword",
+        "imagePath" : "armorSword.png",
+        "hp" : 0,
+        "damage" : 2,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "shield",
+        "imagePath" : "heavyShield.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 3,
+        "magicResistance" : 0
+      } ]
+    }
+  },
+  "wesfd" : {
+    "username" : "wesfd",
+    "password" : "adsf",
+    "hero" : null
+  },
+  "waesfd" : {
+    "username" : "waesfd",
+    "password" : "adfs",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 19,
+      "damage" : 2,
+      "armor" : 9,
+      "magicResistance" : 6,
+      "items" : [ {
+        "type" : "sword",
+        "imagePath" : "armorSword.png",
+        "hp" : 0,
+        "damage" : 2,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "shield",
+        "imagePath" : "heavyShield.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "cuirass",
+        "imagePath" : "magickCuirass.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 0,
+        "magicResistance" : 3
+      } ]
+    }
+  },
+  "цуаывуыва" : {
+    "username" : "цуаывуыва",
+    "password" : "фвыа",
+    "hero" : null
+  },
+  "efsrdgf" : {
+    "username" : "efsrdgf",
+    "password" : "asdf",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 19,
+      "damage" : 2,
+      "armor" : 9,
+      "magicResistance" : 6,
+      "items" : [ {
+        "type" : "sword",
+        "imagePath" : "armorSword.png",
+        "hp" : 0,
+        "damage" : 2,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "cuirass",
+        "imagePath" : "magickCuirass.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 0,
+        "magicResistance" : 3
+      }, {
+        "type" : "shield",
+        "imagePath" : "heavyShield.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 3,
+        "magicResistance" : 0
+      } ]
+    }
+  },
+  "dfs" : {
+    "username" : "dfs",
+    "password" : "fsd",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 18,
+      "damage" : 4,
+      "armor" : 7,
+      "magicResistance" : 7,
+      "items" : [ {
+        "type" : "sword",
+        "imagePath" : "armorSword.png",
+        "hp" : 0,
+        "damage" : 2,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "shield",
+        "imagePath" : "buckler.png",
+        "hp" : 1,
+        "damage" : 1,
+        "armor" : 1,
+        "magicResistance" : 1
+      }, {
+        "type" : "cuirass",
+        "imagePath" : "magickCuirass.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 0,
+        "magicResistance" : 3
+      } ]
+    }
+  },
+  "asd" : {
+    "username" : "asd",
+    "password" : "adsf",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 19,
+      "damage" : 2,
+      "armor" : 6,
+      "magicResistance" : 9,
+      "items" : [ {
+        "type" : "cuirass",
+        "imagePath" : "magickCuirass.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 0,
+        "magicResistance" : 3
+      }, {
+        "type" : "sword",
+        "imagePath" : "armorSword.png",
+        "hp" : 0,
+        "damage" : 2,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "shield",
+        "imagePath" : "magickShield.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 0,
+        "magicResistance" : 3
+      } ]
+    }
+  },
+  "цвуаыв" : {
+    "username" : "цвуаыв",
+    "password" : "фвыа",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 19,
+      "damage" : 2,
+      "armor" : 9,
+      "magicResistance" : 6,
+      "items" : [ {
+        "type" : "sword",
+        "imagePath" : "armorSword.png",
+        "hp" : 0,
+        "damage" : 2,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "cuirass",
+        "imagePath" : "magickCuirass.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 0,
+        "magicResistance" : 3
+      }, {
+        "type" : "shield",
+        "imagePath" : "heavyShield.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 3,
+        "magicResistance" : 0
+      } ]
+    }
+  },
+  "sdf" : {
+    "username" : "sdf",
+    "password" : "efs",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 19,
+      "damage" : 5,
+      "armor" : 7,
+      "magicResistance" : 5,
+      "items" : [ {
+        "type" : "sword",
+        "imagePath" : "armorSword.png",
+        "hp" : 0,
+        "damage" : 3,
+        "armor" : 2,
+        "magicResistance" : 0
+      }, {
+        "type" : "cuirass",
+        "imagePath" : "magickCuirass.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 0,
+        "magicResistance" : 2
+      }, {
+        "type" : "shield",
+        "imagePath" : "heavyShield.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 2,
+        "magicResistance" : 0
+      } ]
+    }
+  },
+  "wefrd" : {
+    "username" : "wefrd",
+    "password" : "awdfs",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 18,
+      "damage" : 4,
+      "armor" : 7,
+      "magicResistance" : 7,
+      "items" : [ {
+        "type" : "sword",
+        "imagePath" : "armorSword.png",
+        "hp" : 0,
+        "damage" : 2,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "cuirass",
+        "imagePath" : "magickCuirass.png",
+        "hp" : 2,
+        "damage" : -1,
+        "armor" : 0,
+        "magicResistance" : 3
+      }, {
+        "type" : "shield",
+        "imagePath" : "buckler.png",
+        "hp" : 1,
+        "damage" : 1,
+        "armor" : 1,
+        "magicResistance" : 1
+      } ]
+    }
+  },
+  "fsd" : {
+    "username" : "fsd",
+    "password" : "esdf",
+    "hero" : {
+      "heroType" : "Archer",
+      "hp" : 18,
+      "damage" : 9,
+      "armor" : 8,
+      "magicResistance" : 0,
+      "items" : [ {
+        "type" : "bow",
+        "imagePath" : "armorBow.png",
+        "hp" : 4,
+        "damage" : 2,
+        "armor" : 2,
+        "magicResistance" : 0
+      }, {
+        "type" : "amulet",
+        "imagePath" : "armorAmulet.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "glove",
+        "imagePath" : "armorGlove.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 3,
+        "magicResistance" : 0
+      } ]
+    }
+  },
+  "esf" : {
+    "username" : "esf",
+    "password" : "sdf",
+    "hero" : {
+      "heroType" : "Archer",
+      "hp" : 18,
+      "damage" : 8,
+      "armor" : 5,
+      "magicResistance" : 3,
+      "items" : [ {
+        "type" : "amulet",
+        "imagePath" : "armorAmulet.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "bow",
+        "imagePath" : "armorBow.png",
+        "hp" : 4,
+        "damage" : 2,
+        "armor" : 2,
+        "magicResistance" : 0
+      }, {
+        "type" : "glove",
+        "imagePath" : "magicGlove.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 0,
+        "magicResistance" : 3
+      } ]
+    }
+  },
+  "erwfrd" : {
+    "username" : "erwfrd",
+    "password" : "efsd",
+    "hero" : {
+      "heroType" : "Mage",
+      "hp" : 18,
+      "damage" : 14,
+      "armor" : 6,
+      "magicResistance" : 4,
+      "items" : [ {
+        "type" : "staff",
+        "imagePath" : "armorStaff.png",
+        "hp" : 0,
+        "damage" : 5,
+        "armor" : 3,
+        "magicResistance" : 0
+      }, {
+        "type" : "hat",
+        "imagePath" : "damageHat.png",
+        "hp" : 4,
+        "damage" : 5,
+        "armor" : 0,
+        "magicResistance" : 0
+      }, {
+        "type" : "ring",
+        "imagePath" : "armorRing.png",
+        "hp" : 2,
+        "damage" : 0,
+        "armor" : 3,
+        "magicResistance" : 1
+      } ]
+    }
+  },
+  "dasf" : {
+    "username" : "dasf",
+    "password" : "dasf",
+    "hero" : {
+      "heroType" : "Knight",
+      "hp" : 15,
+      "damage" : 2,
+      "armor" : 3,
+      "magicResistance" : 3,
+      "items" : [ ]
+    }
+  }
 }

@@ -2,21 +2,13 @@ package com.matnik.game.fxcoursework.client.view;
 
 import com.almasb.fxgl.dsl.FXGL;
 import com.matnik.game.fxcoursework.client.module.Hero;
-import com.matnik.game.fxcoursework.client.module.HeroBuilder;
 import com.matnik.game.fxcoursework.client.module.HeroType;
-import com.matnik.game.fxcoursework.server.model.Response;
-import com.matnik.game.fxcoursework.server.model.UserInfo;
-import javafx.animation.Interpolator;
-import javafx.animation.PauseTransition;
-import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -28,9 +20,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
-
-import javafx.scene.control.Label;
-import javafx.util.Duration;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
@@ -49,20 +38,22 @@ public class FightView extends Parent {
     private Text enemyHPLabel;
     private Text enemyAttackLabel;
     private boolean isPlayerTurn;
-    private Hero hero;
     private Hero enemyHero;
     private Button attackButton;
-    private Button blockButton;
+    private Text playerArmorLabel;
+    private Text playerMagicResistanceLabel;
+    private Text enemyArmorLabel;
+    private Text enemyMagicResistanceLabel;
+
 
     ImageView heroImageView;
     ImageView enemyHeroImageView;
 
     public FightView() throws IOException, ClassNotFoundException {
-        hero = HeroBuilder.buildHero();
-        StartMenu.out.writeObject(hero);
+        StartMenu.out.writeObject(BuildView.hero);
         enemyHero = (Hero) StartMenu.in.readObject();
         isPlayerTurn = StartMenu.in.readObject().toString().equals("First");
-        playerMaxHp = hero.getHp();
+        playerMaxHp = BuildView.hero.getHp();
         enemyMaxHp = enemyHero.getHp();
         var titleLabel = new Text("Fight");
         titleLabel.setFill(Color.YELLOW);
@@ -103,10 +94,10 @@ public class FightView extends Parent {
             }
         });
 
-        blockButton = createButton("Block", this::handleBlock);
+
 
         // Use an HBox for horizontal arrangement of buttons
-        var buttonBox = new HBox(20, attackButton, blockButton);
+        var buttonBox = new HBox(20, attackButton);
 
         buttonBox.setAlignment(javafx.geometry.Pos.CENTER);
         buttonBox.setTranslateY(650);
@@ -120,11 +111,16 @@ public class FightView extends Parent {
         enemyHPBar.setTranslateX(450);
         enemyHPBar.setTranslateY(200);
         enemyHPBar.setStyle("-fx-accent: red;");
-        playerHPLabel = createLabel("HP: " + hero.getHp(), 50, 170);
-        playerAttackLabel = createLabel("Attack: " + hero.getDamage(), 150, 170);
+        playerHPLabel = createLabel("HP: " + BuildView.hero.getHp(), 50, 120);
+        playerAttackLabel = createLabel("Attack: " + BuildView.hero.getDamage(), 150, 120);
 
-        enemyHPLabel = createLabel("HP: " + enemyHero.getHp(), 600, 170);
-        enemyAttackLabel = createLabel("Attack: " + enemyHero.getDamage(), 700, 170);
+        enemyHPLabel = createLabel("HP: " + enemyHero.getHp(), 600, 120);
+        enemyAttackLabel = createLabel("Attack: " + enemyHero.getDamage(), 700, 120);
+        playerArmorLabel = createLabel("Armor: " + BuildView.hero.getArmor(), 50, 150);
+        playerMagicResistanceLabel = createLabel("Magic Resistance: " + BuildView.hero.getMagicResistance(), 50, 180);
+
+        enemyArmorLabel = createLabel("Armor: " + enemyHero.getArmor(), 600, 150);
+        enemyMagicResistanceLabel = createLabel("Magic Resistance: " + enemyHero.getMagicResistance(), 600, 180);
 
         if (!isPlayerTurn) {
             handleEnemyAttack();
@@ -140,15 +136,18 @@ public class FightView extends Parent {
                 enemyHPBar,
                 playerHPLabel,
                 playerAttackLabel,
+                playerArmorLabel,
+                playerMagicResistanceLabel,
                 enemyHPLabel,
-                enemyAttackLabel
+                enemyAttackLabel,
+                enemyArmorLabel,
+                enemyMagicResistanceLabel
         );
+
     }
 
     private void handleEnemyAttack() {
         attackButton.setDisable(true);
-        blockButton.setDisable(true);
-
         Task<Void> task = new Task<>() {
             @Override
             protected Void call() throws InterruptedException {
@@ -161,19 +160,27 @@ public class FightView extends Parent {
                 });
 
                 try {
-                    // Небольшая задержка перед чтением объекта
-                    Thread.sleep(500);
-                    hero = (Hero) StartMenu.in.readObject();
-                } catch (IOException | ClassNotFoundException | InterruptedException e) {
+                    BuildView.hero = (Hero) StartMenu.in.readObject();
+                } catch (IOException | ClassNotFoundException e) {
                     throw new RuntimeException(e);
                 }
 
                 Platform.runLater(() -> {
                     try {
-                        getNotificationService().pushNotification("You get " + enemyHero.getDamage() + " damage");
+                        int damageDealt = enemyHero.getDamage();
+                        if (enemyHero.getHeroType() == HeroType.Mage) {
+                            damageDealt -= BuildView.hero.getMagicResistance();
+                        } else {
+                            damageDealt -= BuildView.hero.getArmor();
+                        }
+                        if (damageDealt < 0) {damageDealt = 0;}
+                        getNotificationService().pushNotification("You get " + damageDealt + " damage");
+                        if (BuildView.hero.getHp() <= 0) {
+                            handlePlayerDefeated();
+                            return;
+                        }
                         updatePlayerUI();
                         attackButton.setDisable(false);
-                        blockButton.setDisable(false);
                         isPlayerTurn = true;
                     } catch (Exception e) {
                         throw new RuntimeException(e);
@@ -220,11 +227,14 @@ public class FightView extends Parent {
     private void handleAttack() throws IOException, InterruptedException {
 
 
-        // Player's turn to attack
-        int damageDealt = hero.getDamage(); // Replace with your logic
-
-        // Update enemy's HP
-        enemyHero.setHp(enemyHero.getHp() - damageDealt);
+        int damageDealt = BuildView.hero.getDamage();
+        if (BuildView.hero.getHeroType() == HeroType.Mage) {
+            damageDealt -= enemyHero.getMagicResistance();
+        } else {
+            damageDealt -= enemyHero.getArmor();
+        }
+        if (damageDealt >= 0)
+            enemyHero.setHp(enemyHero.getHp() - damageDealt);
 
         // Update UI
         updateEnemyUI();
@@ -232,6 +242,7 @@ public class FightView extends Parent {
         // Check if the enemy is defeated
         if (enemyHero.getHp() <= 0) {
             handleEnemyDefeated();
+            return;
         }
         StartMenu.out.writeObject(enemyHero);
 
@@ -242,37 +253,37 @@ public class FightView extends Parent {
 
     }
 
-    public static void applyShakeEffect(Node node, Duration duration, double intensity) {
-        TranslateTransition tt = new TranslateTransition(duration, node);
-        tt.setByX(intensity);
-        tt.setInterpolator(Interpolator.DISCRETE);
-        tt.setAutoReverse(true);
-        tt.setCycleCount(30);
-        tt.play();
-    }
 
     private void updatePlayerUI() {
-        // Update player's HP and attack labels
-        playerHPLabel.setText("HP: " + hero.getHp());
-        playerAttackLabel.setText("Attack: " + hero.getDamage());
-        playerHPBar.setProgress((double) hero.getHp() / playerMaxHp);
-        applyShakeEffect(heroImageView, Duration.seconds(2), 10);
+        // Update player's HP, attack, armor, and magic resistance labels
+        playerHPLabel.setText("HP: " + BuildView.hero.getHp());
+        playerAttackLabel.setText("Attack: " + BuildView.hero.getDamage());
+        playerArmorLabel.setText("Armor: " + BuildView.hero.getArmor());
+        playerMagicResistanceLabel.setText("Magic Resistance: " + BuildView.hero.getMagicResistance());
+        playerHPBar.setProgress((double) BuildView.hero.getHp() / playerMaxHp);
     }
 
     private void updateEnemyUI() {
-        // Update enemy's HP and attack labels
+        // Update enemy's HP, attack, armor, and magic resistance labels
         enemyHPLabel.setText("HP: " + enemyHero.getHp());
         enemyAttackLabel.setText("Attack: " + enemyHero.getDamage());
+        enemyArmorLabel.setText("Armor: " + enemyHero.getArmor());
+        enemyMagicResistanceLabel.setText("Magic Resistance: " + enemyHero.getMagicResistance());
         enemyHPBar.setProgress((double) enemyHero.getHp() / enemyMaxHp);
-        applyShakeEffect(enemyHeroImageView, Duration.seconds(2), 10);
     }
 
-    private void handleEnemyDefeated() {
-        // Implement logic when the enemy is defeated
+
+    private void handleEnemyDefeated() throws IOException {
+        StartMenu.out.writeObject(enemyHero);
+        showMessage("You won");
+        getChildren().clear();
+        getChildren().addAll(new MainMenuView());
     }
 
     private void handlePlayerDefeated() {
-        // Implement logic when the player is defeated
+        showMessage("You lose");
+        getChildren().clear();
+        getChildren().addAll(new MainMenuView());
     }
 
     private void handleBlock() {
